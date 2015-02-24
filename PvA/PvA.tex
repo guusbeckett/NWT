@@ -137,26 +137,30 @@ Breda
 Zeroshell is een Linux distributie speciaal ontwikkeld voor het serveren van netwerkservices. De distro is gemaakt voor servers en embedded devices, wat het uitermate geschikt maakt voor onze opdracht. Voor het configureren van de server is geen shell toegang vereist, aangezien het volledige operating system (OS) te configureren is via de webinterface die meegeleverd wordt. Deze distro zal uiteindelijk worden gebuikt op de Thin Server Linux Router.
 \subsubsection{Superb Mini Server}
 % http://sms.it-ccs.com/
-Superb Mini Server (SMS) is een Linux distributie die speciaal is ontwikkeld voor het zijn van een server. SMS zal gebruikt worden op de DMZ server omdat deze aan alle, door school gestelde eisen voldoet. SMS heeft alle nodige programmas al voorge\"installeerd en het configureren hiervan zal gemakkelijk zijn omdat dit gedaan kan worden door middel van een webinterface. 
+Superb Mini Server (SMS) is een Linux distributie die speciaal is ontwikkeld voor het zijn van een server. SMS zal gebruikt worden op de DMZ server omdat deze aan alle, door school gestelde eisen voldoet. SMS heeft alle nodige programmas al voorge\"installeerd pen het configureren hiervan zal gemakkelijk zijn omdat dit gedaan kan worden door middel van een webinterface. 
 Naast het feit dat dit het makkelijker maakt om het systeem te configureren, maakt het het updaten van de software ook veiliger, aangezien de onderhouders van deze distro rekening houden met de samenstelling van het systeem en daardoor geen updates zullen toestaan die dit systeem breken, wat dan weer resulteerd in minder downtime.
 \subsection{Gateway}
 \subsection{Software}
 \subsubsection{Firewall}
 Wij hebben gekozen voor iptables omdat het de industriestandaard is en door vele mensen gecontroleerd wordt op veiligheidsrisisco's. Een ander argument voor het gebruik van iptables is dat wij er al kennis van hebben.
 \subsubsection{DHCP}
-
+Voor DHCP server is gekozen voor DHCPD. DHCPD is een referentie implementatie van een DHCP server die beheerd wordt door het ISC (Internet Systems Consortium) en is een bewezen DHCP server. DHCP is een protocol dat wordt gebruikt om computers dynamisch netwerkinstellingen ophaalt.
 \subsubsection{DNS}
-% DNS auth
+% DNS authz
 \subsubsection{SSH shell}
+De SSH server is nodig om op afstand commandos uit te voeren op een systeem. De SSH server die wij gebruiken is de OpenSSH server.
 \subsubsection{TFTP server}
+TFTP is een bestandsoverdracht protocol ontwikkeld om in een vroeg stadium van boot gebruikt te worden door een systeem.
 \subsubsection{NFS}
+NFS is een netwerk filesystem protocol en is ontwikkeld met linux in gedachte.
 \subsubsection{PXE-Bootserver}
 \subsubsection{PXE-bootclient}
 \subsubsection{Logging}
+Het gebruik van Sysklogd is gekozen sinds het een linux standaard is. Een logger is belangerijk zodat je kan zien wat er op het systeem is gebeurd.
 \subsubsection{Webserver}
-De HTTP server die wij gebruiken is Apache. Apache is een industriestandaard en word voor vele professionele webservers gebruikt. Deze HTTP server zit standaard in Superb Mini Server.
+De HTTP server die wij gebruiken is Apache. Apache is een industriestandaard en word voor vele professionele webservers gebruikt. Deze HTTP server zit standaard in Superb Mini Server. Een webserver is een server die websites dient aan webclients.
 \subsubsection{FTP server}
-Als FTP server hebben wij gekozen voor ProFTPD. ProFTPD is een GPL gelicenceerde en zeer flexibele FTP server. Deze FTP server zit standaard in Superb Mini Server.
+Als FTP server hebben wij gekozen voor ProFTPD. ProFTPD is een GPL gelicenceerde en zeer flexibele FTP server. Deze FTP server zit standaard in Superb Mini Server. Een FTP server is een server die gebruikt kan worden om bestanden te verplaatsen over netwerk.
 \subsubsection{IDS}
 IBM Informix Dynamic Server
 Informix Dynamic Server, also known as IDS, is an extensible Relational Database Management System originally developed by Informix Software Inc. (originally Relational Database Systems, Inc). IDS is now part of the IBM Software Group database portfolio.
