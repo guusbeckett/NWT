@@ -8,11 +8,11 @@
 \usepackage[dutch]{babel}
 \usepackage{hyperref} %Allow for references
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black
 } %Set up hyperlink colours.
 \newcommand{\sectionbreak}{\clearpage} % Should start every section on its own page
 \usepackage{geometry} % Required to change the page size to A4
@@ -41,16 +41,16 @@
 \usepackage{listings}
 \usepackage[svgnames,table,xcdraw]{xcolor}
 \lstset { 
-    language=C,
-    frame=single,
-    escapeinside={\%*}{*)}, 
-    breaklines=true,  
-    backgroundcolor=\color{black!5},
-    basicstyle=\footnotesize,
-    commentstyle=\color{mygreen},
-    numberstyle=\tiny\color{mygray},
-    rulecolor=\color{black},
-    keywordstyle=\color{blue},
+language=C,
+frame=single,
+escapeinside={\%*}{*)}, 
+breaklines=true,  
+backgroundcolor=\color{black!5},
+basicstyle=\footnotesize,
+commentstyle=\color{mygreen},
+numberstyle=\tiny\color{mygray},
+rulecolor=\color{black},
+keywordstyle=\color{blue},
 }
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -139,7 +139,9 @@ Breda
 % http://sms.it-ccs.com/
 \subsection{Software}
 \subsubsection{Firewall}
+Wij hebben gekozen voor iptables omdat het de industriestandaard is en door vele mensen gecontroleerd wordt op veiligheidsrisisco's. Een ander argument voor het gebruik van iptables is dat wij er al kennis van hebben.
 \subsubsection{DHCP}
+
 \subsubsection{DNS}
 % DNS auth
 \subsubsection{SSH shell}
@@ -149,7 +151,9 @@ Breda
 \subsubsection{PXE-bootclient}
 \subsubsection{Logging}
 \subsubsection{Webserver}
+De HTTP server die wij gebruiken is Apache. Apache is een industriestandaard en word voor vele professionele webservers gebruikt. Deze HTTP server zit standaard in Superb Mini Server.
 \subsubsection{FTP server}
+Als FTP server hebben wij gekozen voor ProFTPD. ProFTPD is een GPL gelicenceerde en zeer flexibele FTP server. Deze FTP server zit standaard in Superb Mini Server.
 \subsubsection{IDS}
 IBM Informix Dynamic Server
 Informix Dynamic Server, also known as IDS, is an extensible Relational Database Management System originally developed by Informix Software Inc. (originally Relational Database Systems, Inc). IDS is now part of the IBM Software Group database portfolio.
