@@ -165,6 +165,10 @@ TFTP is een bestandsoverdracht protocol ontwikkeld om in een vroeg stadium van b
 De PXE-Bootserver zal gebaseerd zijn op TFTP op een linux machine.
 \subsubsection{PXE-bootclient - 7}
 Het systeem komt met de intel PXE bootclient. Hier kunnen geen keuzes in gemaakt worden.
+\subsection{Volgorde van installatie}
+De nummers achter ieder programma staat voor de volgerde in welke deze geinstalleerd/geconfigureerd moeten worden volgens de planning. Er volgt nu een korte verklaring van de gekozen volgorde.
+\paragraph{}
+Er is gekozen logging als eerste te configureren zodat het makkelijker is om te zien als er wat mis gaat met de volgende delen software. Vervolgens word de SSH server ingeschakeld zodat de router makkelijk op afstand instelbaar word, dit maakt de rest van de configuraties een stuk makkelijker. Na de configuratie van de SSH server word de firewall ingeschakeld en meteen daaropvolgend de DHCP server. Als de DHCP server is ingeschakeld word de gateway opgezet, op de gateway word DNS ingeschakeld en geconfigureerd. Zodra de gateway werkt word daar een NFS server op gezet voor later gebruik met PXE. direct volgend zal er op de server in de DMZ een webserveren FTP server worden geinstalleerd. Zodra de DMZ server geconfigeerd is word het bestaande Thin Linux Router systeem in een image omgezet en worden door het installeren van een TFTP server en configureren van een PXE bootclient klaargemaakt voor een PXE boot die daarna meteen word gebruikt.
 \section{Hoofdstuk 2}
 \lipsum[0-4]
 \section{Hoofdstuk 3}
