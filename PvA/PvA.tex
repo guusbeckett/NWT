@@ -110,7 +110,7 @@ Johan \textsc{Talboom}
 
 {\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
-Versie: 0.1.0
+Versie: 1.0.0
 
 \vfill % Fill the rest of the page with whitespace
 
@@ -119,61 +119,54 @@ Versie: 0.1.0
 \clearpage
 \section*{Voorwoord}
 \addcontentsline{toc}{section}{Voorwoord}
-
+Dit plan van aanpak zal beschrijven welke programma's en besturingsystemen we gaan gebruiken. Ook zal dit document beschrijven in welke volgorde we de programma`s zullen gaan installeren. Ten slotte komt een gedetaileerdere planning aan bod in de vorm van een Gantt chart, deze zal beschrijven wanneer de ingeplande opleveringsdata zijn.
+Wij kijken erg uit naar dit project omdat we hiermee eindelijk onze Linux/BSD kennis kunnen tonen aan de opleiding.
+\\
 Guus Beckett \& Jim van Abkoude \\
 \today \\
 Breda
 \newpage
-\section*{Samenvatting}
-\addcontentsline{toc}{section}{Samenvatting}
-\lipsum[0-2]
-\newpage
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
-\section{Vooronderzoek}
-\subsection{Distributies}
-\subsubsection{Zeroshell}
+\section{Distributies}
+\subsection{Zeroshell}
 Zeroshell is een Linux distributie speciaal ontwikkeld voor het serveren van netwerkservices. De distro is gemaakt voor servers en embedded devices, wat het uitermate geschikt maakt voor onze opdracht. Voor het configureren van de server is geen shell toegang vereist, aangezien het volledige operating system (OS) te configureren is via de webinterface die meegeleverd wordt. Deze distro zal uiteindelijk worden gebuikt op de Thin Server Linux Router.
-\subsubsection{Superb Mini Server}
+\subsection{Superb Mini Server}
 % http://sms.it-ccs.com/
 Superb Mini Server (SMS) is een Linux distributie die speciaal is ontwikkeld voor het zijn van een server. SMS zal gebruikt worden op de DMZ server omdat deze aan alle, door school gestelde eisen voldoet. SMS heeft alle nodige programmas al voorge\"installeerd pen het configureren hiervan zal gemakkelijk zijn omdat dit gedaan kan worden door middel van een webinterface. 
 Naast het feit dat dit het makkelijker maakt om het systeem te configureren, maakt het het updaten van de software ook veiliger, aangezien de onderhouders van deze distro rekening houden met de samenstelling van het systeem en daardoor geen updates zullen toestaan die dit systeem breken, wat dan weer resulteerd in minder downtime.
-\subsubsection{OpenBSD}
-
-\subsection{Gateway}
-\subsection{Software}
-\subsubsection{Logging - 1}
+\subsection{OpenBSD}
+OpenBSD is een BSD smaakje met beveiliging en openheid als voornaamste uitgangspunten. Dit is de voornaamste rede dat deze BSD versie erg populair is in netwerk omgevingen, niet alleen als server maar ook, zoals deze OS gebruikt zal gaan worden, als gateways en DNS servers. Aangezien de opdracht die vervuld moet worden geen enorme uitdaging is voor het projectteam is ervoor gekozen om OpenBSD te gebruiken, dit geeft het team de mogelijkheid de expertise op het gebied van OpenBSD uit te bereiden.
+\clearpage
+\section{Software}
+\subsection{Logging - 1}
 Het gebruik van Sysklogd is gekozen sinds het een linux standaard is. Een logger is belangerijk zodat je kan zien wat er op het systeem is gebeurd.
-\subsubsection{SSH server - 2}
+\subsection{SSH server - 2}
 De SSH server is nodig om op afstand commandos uit te voeren op een systeem. De SSH server die wij gebruiken is de OpenSSH server.
-\subsubsection{Firewall - 3}
+\subsection{Firewall - 3}
 Wij hebben gekozen voor iptables omdat het de industriestandaard is en door vele mensen gecontroleerd wordt op veiligheidsrisisco's. Een ander argument voor het gebruik van iptables is dat wij er al kennis van hebben.
-\subsubsection{DHCP - 4}
+\subsection{DHCP - 4}
 Voor DHCP server is gekozen voor DHCPD. DHCPD is een referentie implementatie van een DHCP server die beheerd wordt door het ISC (Internet Systems Consortium) en is een bewezen DHCP server. DHCP is een protocol dat wordt gebruikt om computers dynamisch netwerkinstellingen ophaalt.
-\subsubsection{DNS - 4}
+\subsection{DNS - 4}
 Wij gebruiken DNSmasq als DNS server.
-\subsubsection{IDS - 5}
+\subsection{IDS - 5}
 Als IDS (Intrusion Detection system) is er gekozen voor AIDE. AIDE is een gratis en veel gebruikt IDS.
-\subsubsection{NFS - 6}
+\subsection{NFS - 6}
 NFS is een netwerk filesystem protocol en is ontwikkeld met linux in gedachte.
-\subsubsection{Webserver - 6}
+\subsection{Webserver - 6}
 De HTTP server die wij gebruiken is Apache. Apache is een industriestandaard en word voor vele professionele webservers gebruikt. Deze HTTP server zit standaard in Superb Mini Server. Een webserver is een server die websites dient aan webclients.
-\subsubsection{FTP server - 6}
+\subsection{FTP server - 6}
 Als FTP server hebben wij gekozen voor ProFTPD. ProFTPD is een GPL gelicenceerde en zeer flexibele FTP server. Deze FTP server zit standaard in Superb Mini Server. Een FTP server is een server die gebruikt kan worden om bestanden te verplaatsen over netwerk.
-\subsubsection{TFTP server - 7}
+\subsection{TFTP server - 7}
 TFTP is een bestandsoverdracht protocol ontwikkeld om in een vroeg stadium van boot gebruikt te worden door een systeem.
-\subsubsection{PXE-Bootserver - 7}
+\subsection{PXE-Bootserver - 7}
 De PXE-Bootserver zal gebaseerd zijn op TFTP op een linux machine.
-\subsubsection{PXE-bootclient - 7}
+\subsection{PXE-bootclient - 7}
 Het systeem komt met de intel PXE bootclient. Hier kunnen geen keuzes in gemaakt worden.
-\subsection{Volgorde van installatie}
+\clearpage
+\section{Volgorde van installatie}
 De nummers achter ieder programma staat voor de volgerde in welke deze geinstalleerd/geconfigureerd moeten worden volgens de planning. Er volgt nu een korte verklaring van de gekozen volgorde.
 \paragraph{}
 Er is gekozen logging als eerste te configureren zodat het makkelijker is om te zien als er wat mis gaat met de volgende delen software. Vervolgens word de SSH server ingeschakeld zodat de router makkelijk op afstand instelbaar word, dit maakt de rest van de configuraties een stuk makkelijker. Na de configuratie van de SSH server word de firewall ingeschakeld en meteen daaropvolgend de DHCP server. Als de DHCP server is ingeschakeld word de gateway opgezet, op de gateway word DNS ingeschakeld en geconfigureerd. Zodra de gateway werkt word daar een NFS server op gezet voor later gebruik met PXE. direct volgend zal er op de server in de DMZ een webserveren FTP server worden geinstalleerd. Zodra de DMZ server geconfigeerd is word het bestaande Thin Linux Router systeem in een image omgezet en worden door het installeren van een TFTP server en configureren van een PXE bootclient klaargemaakt voor een PXE boot die daarna meteen word gebruikt.
-\section{Hoofdstuk 2}
-\lipsum[0-4]
-\section{Hoofdstuk 3}
-\lipsum[0-4]
-\clearpage 
 \end{document}
