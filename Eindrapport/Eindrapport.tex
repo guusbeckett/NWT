@@ -129,12 +129,23 @@ Breda
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
-\section{Something}
-\subsection{Iets}
-\lipsum[0-2]
-\subsection{Rien d'autre}
-% http://sms.it-ccs.com/
-\lipsum[0-2]
-\subsection{noch etwas}
-\lipsum[0-2]
+\section{Requirements}
+De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen en bla bla
+\subsection{Gateway} % (fold)
+\label{sub:gateway}
+Er was een eis dat er een gateway tussen het Avans hogeschool en het project zijn netwerk was geplaatst, dit was waarschijnlijk nodig als bescherming voor het Avans netwerk tegen mogelijke fouten die de student zou kunnen maken. Origineel was er in het project sprake van nog een vierde apparaat in het project, namelijk de imageserver. De imageservers van Avans waren niet beschikbaar gesteld aan de studenten en dus werd de verantwoordelijkheid van de imageserver naar de gateway verplaatst.
+\\De gateway moest in staat zijn als zowel een DHCP en een DNS server te fungeren en de DNS server moest een eigen TLD voor lokaal gedefineerd hebben. Ook moest gateway packetfiltering hebben.
+\\Aangezien de imageserver zijn verantwoordelijkheden zijn verwerkt in de gateway vallen de requirements van de imageserver nu onder de gateway. De gateway moet nu dan ook een TFTP-server, NFS-server en PXE-bootserver hebben. Het imageserver deel had ook enkele bonus requirements, dit waren het draaien van een webserver met PHP en het draaien van een mysql server op de gateway.
+% subsection gateway (end)
+\subsection{Thin Server Linux Router} % (fold)
+\label{sub:thin_server_linux_router}
+Het hoofddeel van het project was het installeren van een TSLR (Thin Server Linux Router) deze via PXE te laten booten waarbij hij zijn bootfiles verkrijgt via TFTP, een remote filesystem te laten gebruiken via NFS en een gebruik te maken van een static WAN IP.
+\\De TSLR moest naast PXE ook firewall en routingfuncties hebben. De routerfuncties van de TSLR gaan over het beheren van een LAN, een DMZ en het routeren van packets tussen deze 2 netwerken.
+\\Zeer veel firewall verantwoordelijkheden moeten ook door de TSLR uitgevoerd worden zoals het blokeren van nieuwe connecties vanuit de DMZ naar het LAN, het blokkeren van nieuwe connecties van WAN naar LAN, het droppen van alle ICMP packets, het toelaten van alle verbindingen van LAN naar WAN. het toelaten van alle verbindingen van LAN naar DMZ en het instellen van static routing.
+\\Er waren ook een paar overige requirements zoals het systeem logs remote opslaan en een SSH shell laten draaien. Naast de overige requirements waren er ook bonus requirements, dit waren het draaien van een webserver en een infopagina met status en NIC statistieken.
+% subsection thin_server_linux_router (end)
+\section{Vooronderzoek}
+\section{Ontwerp}
+\section{Implementatie}
+\section{Testen}
 \end{document}
