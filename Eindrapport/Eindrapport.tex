@@ -133,9 +133,9 @@ Breda
 De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen en bla bla
 \subsection{Gateway} % (fold)
 \label{sub:gateway}
-Er was een eis dat er een gateway tussen het Avans hogeschool en het project zijn netwerk was geplaatst, dit was waarschijnlijk nodig als bescherming voor het Avans netwerk tegen mogelijke fouten die de student zou kunnen maken. Origineel was er in het project sprake van nog een vierde apparaat in het project, namelijk de imageserver. De imageservers van Avans waren niet beschikbaar gesteld aan de studenten en dus werd de verantwoordelijkheid van de imageserver naar de gateway verplaatst.
-\\De gateway moest in staat zijn als zowel een DHCP en een DNS server te fungeren en de DNS server moest een eigen TLD voor lokaal gedefineerd hebben. Ook moest gateway packetfiltering hebben.
-\\Aangezien de imageserver zijn verantwoordelijkheden zijn verwerkt in de gateway vallen de requirements van de imageserver nu onder de gateway. De gateway moet nu dan ook een TFTP-server, NFS-server en PXE-bootserver hebben. Het imageserver deel had ook enkele bonus requirements, dit waren het draaien van een webserver met PHP en het draaien van een mysql server op de gateway.
+Een van de door school gestelde eisen was het plaatsten van een gateway tussen het Avans hogeschool netwerk en de TSLR van dit project, dit was waarschijnlijk bedoeld als bescherming voor het Avans netwerk tegen mogelijke fouten die de student zou kunnen maken en het omzeilen van MAC adress authenticatie. Origineel was er in dit project sprake van nog een vierde apparaat in het project, namelijk de imageserver. De imageservers van Avans waren niet beschikbaar gesteld aan de studenten en dus werden de verantwoordelijkheden van de imageserver naar de gateway verplaatst.
+\\De gateway moest in staat zijn als zowel een DHCP en een DNS server te fungeren waarin de DNS server een eigen TLD moest hosten voor binnenin het lokale netwerk. Ook moest gateway packetfiltering toepassen.
+\\Aangezien de verantwoordelijkheden van de imageserver zijn verwerkt in de gateway vallen de requirements van de imageserver nu onder de gateway. De gateway moest daarom ook een TFTP-server, NFS-server en PXE-bootserver hebben. Het imageserver deel had ook enkele bonus requirements, dit waren het draaien van een webserver met PHP en het draaien van een MySQL server op de gateway.
 % subsection gateway (end)
 \subsection{Thin Server Linux Router} % (fold)
 \label{sub:thin_server_linux_router}
