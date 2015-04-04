@@ -130,7 +130,7 @@ Breda
 \newpage
 \pagenumbering{arabic}
 \section{Requirements}
-De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen en bla bla
+De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen.
 \subsection{Gateway} % (fold)
 \label{sub:gateway}
 Er was een eis dat er een gateway tussen het Avans hogeschool en het project zijn netwerk was geplaatst, dit was waarschijnlijk nodig als bescherming voor het Avans netwerk tegen mogelijke fouten die de student zou kunnen maken. Origineel was er in het project sprake van nog een vierde apparaat in het project, namelijk de imageserver. De imageservers van Avans waren niet beschikbaar gesteld aan de studenten en dus werd de verantwoordelijkheid van de imageserver naar de gateway verplaatst.
@@ -144,6 +144,10 @@ Het hoofddeel van het project was het installeren van een TSLR (Thin Server Linu
 \\Zeer veel firewall verantwoordelijkheden moeten ook door de TSLR uitgevoerd worden zoals het blokeren van nieuwe connecties vanuit de DMZ naar het LAN, het blokkeren van nieuwe connecties van WAN naar LAN, het droppen van alle ICMP packets, het toelaten van alle verbindingen van LAN naar WAN. het toelaten van alle verbindingen van LAN naar DMZ en het instellen van static routing.
 \\Er waren ook een paar overige requirements zoals het systeem logs remote opslaan en een SSH shell laten draaien. Naast de overige requirements waren er ook bonus requirements, dit waren het draaien van een webserver en een infopagina met status en NIC statistieken.
 % subsection thin_server_linux_router (end)
+\subsection{DMZ} % (fold)
+\label{sub:dmz}
+Een requirement van de opdracht was dat er een DMZ zou worden opgesteld en hier een enkele (1) server in zou komen. De DMZ server moest een PHP en MYSQL webserver draaien. De DMZ server heeft ook de verantwoordelijkheid een logging server te draaien, FTP en SSH server te draaien en DNS auth te regelen.
+% subsection dmz (end)
 \section{Vooronderzoek}
 \section{Ontwerp}
 \section{Implementatie}
