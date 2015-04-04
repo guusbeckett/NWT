@@ -162,5 +162,25 @@ Het kiezen van de juiste OS voor het juiste apparaat werd gedaan door middel van
 Ten slotte is de planning gemaakt. De planning die opgesteld is focuste vooral op de volgorde van het installeren van de OS's op de verschillende apparaten. Allereerst zou de TSLR zijn OS krijgen, waarna de Gateway ge\"installeerd worden. Als laatste zou de DMZ server zijn OS krijgen. Hierna zou de PXE boot opgezet worden en de oplevering zijn van het project.
 \section{Ontwerp}
 \section{Implementatie}
+Tijdens het implementeren en uiwerken van het project zijn de volgende stappen doorlopen
+\begin{itemize}
+	\item Het installeren van de gateway
+	\item Het installeren van de router op de CF kaart
+	\item het installeren van de DMZ server
+	\item Het herinstalleren van de DMZ server
+	\item Het herconfigureren van de router
+	\item Het herinstalleren van de router
+	\item Het herinstalleren van de gateway
+	\item Het nogmaals herinstalleren van de gateway
+	\item Het nogmaals herinstalleren van de router
+	\item Het instellen van PXE op de gateway
+	\item De router laten booten via PXE
+	\item Het installeren van webservices op de DMZ
+	\item het configuren van de firewall en routing
+\end{itemize}
+Initieel werd OpenBSD geinstalleerd op de gateway en dat leek prima te werken, de installatie verliep snel en vlekkeloos. Na de installatie werd de computer afgesloten en werd aangenomen dat alles naar behoren zou blijven functioneren. Dit bleek later niet zo te zijn.
+\\Op de TSLR werd de Linux distro Zeroshell ge\"installeerd, deze werd direct op de interne CF kaart geinstalleerd. Het instellen van Zeroshell ging zeer makkelijk zoals verwacht en de router was binnen een middag klaar voor gebruik.
+\\Het installeren van SMS linux op de DMZ server liep niet heel gemakkelijk sinds het geen manier bood om te installeren van USB. De installatie werd dan ook snel geschrapt en werd er voor een andere OS gekozen. Na een kort overleg tussen de projectgenoten werd besloten OpenBSD te installeren ipv SMS linux aangezien deze wel via USB ge\"installeerd kon worden en OpenBSD bekend staat om gemak van installatie en veiligheid.
+\\
 \section{Testen}
 \end{document}
