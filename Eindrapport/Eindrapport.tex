@@ -130,7 +130,7 @@ Breda
 \newpage
 \pagenumbering{arabic}
 \section{Requirements}
-De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen en bla bla
+De requirements voor dit project waren verdeeld over de 3 apparaten die in het netwerk moeten komen.
 \subsection{Gateway} % (fold)
 \label{sub:gateway}
 Een van de door school gestelde eisen was het plaatsten van een gateway tussen het Avans hogeschool netwerk en de TSLR van dit project, dit was waarschijnlijk bedoeld als bescherming voor het Avans netwerk tegen mogelijke fouten die de student zou kunnen maken en het omzeilen van MAC adress authenticatie. Origineel was er in dit project sprake van nog een vierde apparaat in het project, namelijk de imageserver. De imageservers van Avans waren niet beschikbaar gesteld aan de studenten en dus werden de verantwoordelijkheden van de imageserver naar de gateway verplaatst.
@@ -151,6 +151,10 @@ Het hoofddeel van het project was het installeren van een TSLR (Thin Server Linu
 \end{itemize}
 Er waren ook een paar overige requirements zoals het systeem logs remote opslaan en een SSH shell laten draaien. Naast de overige requirements waren er ook bonus requirements, dit waren het draaien van een webserver en een infopagina met status en NIC statistieken.
 % subsection thin_server_linux_router (end)
+\subsection{DMZ} % (fold)
+\label{sub:dmz}
+Een requirement van de opdracht was dat er een DMZ zou worden opgesteld en hier een enkele (1) server in zou komen. De DMZ server moest een PHP en MYSQL webserver draaien. De DMZ server heeft ook de verantwoordelijkheid een logging server te draaien, FTP en SSH server te draaien en DNS auth te regelen.
+% subsection dmz (end)
 \section{Vooronderzoek}
 Tijdens het vooronderzoek lag de focus op het vinden van de juiste OS voor de juiste apparaten. Dit vooronderzoek bestond uit 3 delen. De eisen duidelijk opstellen, de OS bepalen van elk van de drie apparaten en een planning opstellen.\\
 
@@ -165,5 +169,25 @@ Het kiezen van de juiste OS voor het juiste apparaat werd gedaan door middel van
 Ten slotte is de planning gemaakt. De planning die opgesteld is focuste vooral op de volgorde van het installeren van de OS's op de verschillende apparaten. Allereerst zou de TSLR zijn OS krijgen, waarna de Gateway ge\"installeerd worden. Als laatste zou de DMZ server zijn OS krijgen. Hierna zou de PXE boot opgezet worden en de oplevering zijn van het project.
 \section{Ontwerp}
 \section{Implementatie}
+Tijdens het implementeren en uiwerken van het project zijn de volgende stappen doorlopen
+\begin{itemize}
+	\item Het installeren van de gateway
+	\item Het installeren van de router op de CF kaart
+	\item het installeren van de DMZ server
+	\item Het herinstalleren van de DMZ server
+	\item Het herconfigureren van de router
+	\item Het herinstalleren van de router
+	\item Het herinstalleren van de gateway
+	\item Het nogmaals herinstalleren van de gateway
+	\item Het nogmaals herinstalleren van de router
+	\item Het instellen van PXE op de gateway
+	\item De router laten booten via PXE
+	\item Het installeren van webservices op de DMZ
+	\item het configuren van de firewall en routing
+\end{itemize}
+Initieel werd OpenBSD geinstalleerd op de gateway en dat leek prima te werken, de installatie verliep snel en vlekkeloos. Na de installatie werd de computer afgesloten en werd aangenomen dat alles naar behoren zou blijven functioneren. Dit bleek later niet zo te zijn.
+\\Op de TSLR werd de Linux distro Zeroshell ge\"installeerd, deze werd direct op de interne CF kaart geinstalleerd. Het instellen van Zeroshell ging zeer makkelijk zoals verwacht en de router was binnen een middag klaar voor gebruik.
+\\Het installeren van SMS linux op de DMZ server liep niet heel gemakkelijk sinds het geen manier bood om te installeren van USB. De installatie werd dan ook snel geschrapt en werd er voor een andere OS gekozen. Na een kort overleg tussen de projectgenoten werd besloten OpenBSD te installeren ipv SMS linux aangezien deze wel via USB ge\"installeerd kon worden en OpenBSD bekend staat om gemak van installatie en veiligheid.
+\\
 \section{Testen}
 \end{document}
