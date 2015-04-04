@@ -145,6 +145,17 @@ Het hoofddeel van het project was het installeren van een TSLR (Thin Server Linu
 \\Er waren ook een paar overige requirements zoals het systeem logs remote opslaan en een SSH shell laten draaien. Naast de overige requirements waren er ook bonus requirements, dit waren het draaien van een webserver en een infopagina met status en NIC statistieken.
 % subsection thin_server_linux_router (end)
 \section{Vooronderzoek}
+Tijdens het vooronderzoek lag de focus op het vinden van de juiste OS voor de juiste apparaten. Dit vooronderzoek bestond uit 3 delen. De eisen duidelijk opstellen, de OS bepalen van elk van de drie apparaten en een planning opstellen.\\
+
+De eisen die naar voren zijn gekomen tijdens dit onderzoek zijn terug te vinden in hoofdstuk~\ref{sub:thin_server_linux_router} Thin Server Linux Router op pagina~\pageref{sub:thin_server_linux_router}.\\
+
+Het kiezen van de juiste OS voor het juiste apparaat werd gedaan door middel van het gebruik van virtuele machines, waarin de verschillende OS's die geschikt leken uitvoerig werden getest. Aangezien er tijdens het vooronderzoek geen beschikking was over de hardware waarop de OS's uiteindelijk moesten gaan draaien, waren de keuzes die tijdens deze fase van het onderzoek zijn gedaan niet gericht op de hardware waarop de OSsen moesten draaien, maar alleen op de features van de gesteste OS's. De OS's die gekozen waren na dit vooronderzoek zijn:
+\begin{description}
+\item[Gateway - OpenBSD] De beveiligingsgerichte focus van OpenBSD maakt het uitermate geschikt om de gateway te zijn tussen het Internet en het lokale netwerk.
+\item[TSLR - Zeroshell] Het feit dat Zeroshell gemaakt is om te fungeren als routersoftware maakte het een voordehandliggende keus om te gebruiken op de TSLR.
+\item[DMZ server - SuperbMiniServer] De OS die op de DMZ server zou draaien moest gemakkelijk op te zetten zijn en in te stellen zijn, vandaar de keus voor deze distro, die focust op het gemakkelijk maken van het managen van een server.
+\end{description}
+Ten slotte is de planning gemaakt. De planning die opgesteld is focuste vooral op de volgorde van het installeren van de OS's op de verschillende apparaten. Allereerst zou de TSLR zijn OS krijgen, waarna de Gateway ge\"installeerd worden. Als laatste zou de DMZ server zijn OS krijgen. Hierna zou de PXE boot opgezet worden en de oplevering zijn van het project.
 \section{Ontwerp}
 \section{Implementatie}
 \section{Testen}
